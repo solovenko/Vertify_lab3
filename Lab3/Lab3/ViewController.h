@@ -15,8 +15,12 @@
 @property __weak IBOutlet NSTextField *myLabel;
 @property __weak IBOutlet NSTextField *myTextField;
 
+@property (weak) IBOutlet NSTextField *LabelToCheck;
+@property (weak) IBOutlet NSTextField *enterTextField;
 
 -(IBAction)showYourName:(id)sender;
+-(IBAction)submitButton:(id)sender;
+
 
 @end
 
