@@ -9,11 +9,14 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ViewController : NSViewController {
-    
+
 }
 
-@property (strong, nonatomic) NSString* name;
+@property __weak IBOutlet NSTextField *myLabel;
+@property __weak IBOutlet NSTextField *myTextField;
 
+
+-(IBAction)showYourName:(id)sender;
 
 @end
 

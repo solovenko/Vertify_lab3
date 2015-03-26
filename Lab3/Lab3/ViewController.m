@@ -10,6 +10,9 @@
 
 @implementation ViewController
 
+@synthesize myLabel = _myLabel;
+@synthesize myTextField = _myTextField;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -20,6 +23,16 @@
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
+}
+
+-(IBAction)showYourName:(id)sender {
+    
+    NSString* inputString = _myTextField.stringValue;
+    if ([inputString isEqualToString:@""]) {
+        _myLabel.stringValue = [NSString stringWithFormat: @"Hello!", nil];
+    } else {
+            _myLabel.stringValue = [NSString stringWithFormat: @"Hello, %@!",inputString];
+    }
 }
 
 @end
