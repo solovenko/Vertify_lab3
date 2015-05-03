@@ -254,7 +254,7 @@
     
     ASEndGameController* endGameController = segue.destinationController;
     endGameController.representedObject = [self representedObject];
-    
+    [[[[self view] window] windowController] close];
 }
 
 #pragma mark - Action Buttons

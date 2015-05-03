@@ -32,6 +32,7 @@
     
     ASSecondController* second = segue.destinationController;
     second.representedObject = self.players;
+    [[[[self view] window] windowController] close];
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{

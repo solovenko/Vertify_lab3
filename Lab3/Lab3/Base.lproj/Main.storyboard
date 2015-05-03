@@ -927,17 +927,20 @@ DQ
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggu-Fk-Egr">
                                 <rect key="frame" x="174" y="37" width="132" height="32"/>
-                                <buttonCell key="cell" type="push" title="Начать заного" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="htr-jF-jfj">
+                                <buttonCell key="cell" type="push" title="Начать заного" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="htr-jF-jfj">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3q4-gu-kAy">
                                 <rect key="frame" x="341" y="37" width="132" height="32"/>
-                                <buttonCell key="cell" type="push" title="Завершить игру" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Rfp-kV-rEN">
+                                <buttonCell key="cell" type="push" title="Завершить игру" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Rfp-kV-rEN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="exitGame:" target="ldI-XV-9XT" id="SqW-Ob-LDF"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>

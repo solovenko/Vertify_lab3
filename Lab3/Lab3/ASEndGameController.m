@@ -51,5 +51,11 @@
     
 }
 
+- (IBAction)exitGame:(id)sender {
+    
+    [[[[self view] window] windowController] dismissController:self];
+
+}
+
 
 @end

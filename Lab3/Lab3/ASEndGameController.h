@@ -18,4 +18,7 @@
 #pragma mark - Methods
 - (void)startInit;
 
+#pragma mark - Actions
+- (IBAction)exitGame:(id)sender;
+
 @end
