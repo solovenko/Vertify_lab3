@@ -10,15 +10,13 @@
 
 @implementation ViewController
 
-@synthesize myLabel = _myLabel;
-@synthesize myTextField = _myTextField;
+@synthesize player1NameLabel = _player1NameLabel;
+@synthesize player1InputNameTextField = _player1InputNameTextField;
 
-@synthesize LabelToCheck = _LabelToCheck;
-@synthesize enterTextField = _enterTextField;
+@synthesize players;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     // Do any additional setup after loading the view.
 }
 
@@ -28,67 +26,81 @@
     // Update the view, if already loaded.
 }
 
--(IBAction)showYourName:(id)sender {
+
+- (void)prepareForSegue:(NSStoryboardSegue *)segue
+                 sender:(id)sender {
     
-    NSString* inputString = _myTextField.stringValue;
-    if ([inputString isEqualToString:@""]) {
-        _myLabel.stringValue = [NSString stringWithFormat: @"Hello!", nil];
+    ASSecondController* second = segue.destinationController;
+    second.representedObject = self.players;
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    
+    return [self isAllowToSegue];
+}
+
+/* Правильно ли введены имена
+ 
+ */
+- (BOOL)isAllowToSegue{
+    
+    BOOL isAllowToSegue = YES;
+    
+    NSString* inputNamePlayer1 = _player1InputNameTextField.stringValue;
+    if ([inputNamePlayer1 isEqualToString:@""]) {
+        _player1NameLabel.stringValue = [NSString stringWithFormat: @"Введите имя игрока 1!", nil];
+        isAllowToSegue = NO;
     } else {
-            _myLabel.stringValue = [NSString stringWithFormat: @"Hello, %@!",inputString];
+        NSUInteger length = [inputNamePlayer1 length];
+        if (length < 2) {
+            _player1NameLabel.stringValue = [NSString stringWithFormat: @"Слишком короткое имя!", nil];
+            isAllowToSegue = NO;
+        } else {
+            _player1NameLabel.stringValue = [NSString stringWithFormat: @"Привет, %@!",inputNamePlayer1];
+        }
+    }
+    
+    
+    NSString* inputNamePlayer2 = _player2InputNameTextField.stringValue;
+    if ([inputNamePlayer2 isEqualToString:@""]) {
+        _player2NameLabel.stringValue = [NSString stringWithFormat: @"Введите имя игрока 2!", nil];
+        isAllowToSegue = NO;
+    } else {
+        NSUInteger length = [inputNamePlayer2 length];
+        if (length < 2) {
+            _player2NameLabel.stringValue = [NSString stringWithFormat: @"Слишком короткое имя!", nil];
+            isAllowToSegue = NO;
+        } else {
+            _player2NameLabel.stringValue = [NSString stringWithFormat: @"Привет, %@!",inputNamePlayer2];
+        }        
     }
     
 
+    if (isAllowToSegue == YES){
+        
+        ASPlayer* player1 = [[ASPlayer alloc]init];
+        player1.name = inputNamePlayer1;
+        player1.score = 0;
+        player1.skips = 0;
+        
+        ASPlayer* player2 = [[ASPlayer alloc]init];
+        player2.name = inputNamePlayer2;
+        player2.score = 0;
+        player2.skips = 0;
+        
+        self.players = [[NSArray alloc]initWithObjects:
+                        player1,
+                        player2,
+                        nil];
+    }
     
-
-//    NSMutableArray *readed;
-//    
-//    for(NSMutableString *element in lines) {
-//        readed = [NSMutableArray arrayWithArray:[element componentsSeparatedByString: @";"]];
-//        NSLog(@"%@", readed);
-//    }
-
-    
-    
-//    NSMutableString *str = [[NSMutableString alloc] init];
-//    
-//    for (NSUInteger i = 0; i < 10; i++) {
-//        [str appendString:@"Artem is cool!\n"];
-//    }
-//    [str writeToFile:@"/tmp/cool.txt" atomically:YES
-//            encoding:NSUTF8StringEncoding error:NULL];
-//    NSLog(@"done writing /tmp/cool.txt");
-
-    
-    NSFileManager *filemgr;
-    filemgr = [NSFileManager defaultManager];
-    if ([filemgr fileExistsAtPath: @"db.txt" ] == YES)
-        NSLog (@"Файл присуствует");
-    else
-        NSLog (@"Файл не найден");
+    return isAllowToSegue;
 }
 
 - (IBAction)submitButton:(id)sender {
-    NSMutableString *enteredNameOfCity = [NSMutableString stringWithFormat: _enterTextField.stringValue, nil];
+
+//    [self performSegueWithIdentifier:@"toGameWindowSegue" sender:sender];
     
-    NSMutableString* fileName = [NSMutableString stringWithString:@"/tmp/db.txt"];
-    NSMutableString *fileString = [NSMutableString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error: NULL];
-    
-    NSMutableArray *lines = [NSMutableArray arrayWithArray:[fileString componentsSeparatedByString:@"\n"]];
-    BOOL isFinden = NO;
-    NSMutableString *resultString;
-    
-    for (NSMutableString *element in lines) {
-        if ([element isEqualTo:enteredNameOfCity]){
-            isFinden = YES;
-            resultString = element;
-        }
-//        NSLog(@"%@",element);
-    }
-    if (isFinden){
-        _LabelToCheck.stringValue = [NSMutableString stringWithFormat:@"YES, %@",resultString];
-    } else {
-        _LabelToCheck.stringValue = [NSMutableString stringWithFormat:@"NO", nil];
-    }
 }
 
 @end

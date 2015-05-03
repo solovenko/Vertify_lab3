@@ -7,20 +7,26 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ASSecondController.h"
+#import "ASPlayer.h"
 
 @interface ViewController : NSViewController {
 
 }
 
-@property __weak IBOutlet NSTextField *myLabel;
-@property __weak IBOutlet NSTextField *myTextField;
+@property __weak IBOutlet NSTextField *player1NameLabel;
+@property __weak IBOutlet NSTextField *player1InputNameTextField;
+@property (weak) IBOutlet NSTextField *player2NameLabel;
+@property (weak) IBOutlet NSTextField *player2InputNameTextField;
 
-@property (weak) IBOutlet NSTextField *LabelToCheck;
-@property (weak) IBOutlet NSTextField *enterTextField;
+@property (retain, nonatomic) NSArray* players;
 
--(IBAction)showYourName:(id)sender;
+#pragma mark - Methods
+- (void)prepareForSegue:(NSStoryboardSegue *)segue
+                 sender:(id)sender;
+
+#pragma mark - ActionsMark
 -(IBAction)submitButton:(id)sender;
-
 
 @end
 

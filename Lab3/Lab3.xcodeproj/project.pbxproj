@@ -14,6 +14,10 @@
 		D5166EA91AC3C56E002A1D89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5166EA71AC3C56E002A1D89 /* Main.storyboard */; };
 		D5166EB51AC3C56E002A1D89 /* Lab3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5166EB41AC3C56E002A1D89 /* Lab3Tests.m */; };
 		D5166EBF1AC41151002A1D89 /* cities.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5166EBE1AC41151002A1D89 /* cities.strings */; };
+		D53A9A141AF600BE00889896 /* ASEndGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = D53A9A131AF600BE00889896 /* ASEndGameController.m */; };
+		D53A9A161AF6265F00889896 /* ASViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D53A9A151AF6265F00889896 /* ASViewControllerTest.m */; };
+		D55624291AF24E4F004410F7 /* ASSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55624281AF24E4F004410F7 /* ASSecondController.m */; };
+		D556242C1AF26C3B004410F7 /* ASPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D556242B1AF26C3B004410F7 /* ASPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,13 @@
 		D5166EB31AC3C56E002A1D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5166EB41AC3C56E002A1D89 /* Lab3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lab3Tests.m; sourceTree = "<group>"; };
 		D5166EBE1AC41151002A1D89 /* cities.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = cities.strings; sourceTree = "<group>"; };
+		D53A9A121AF600BE00889896 /* ASEndGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASEndGameController.h; sourceTree = "<group>"; };
+		D53A9A131AF600BE00889896 /* ASEndGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASEndGameController.m; sourceTree = "<group>"; };
+		D53A9A151AF6265F00889896 /* ASViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASViewControllerTest.m; sourceTree = "<group>"; };
+		D55624271AF24E4F004410F7 /* ASSecondController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSecondController.h; sourceTree = "<group>"; };
+		D55624281AF24E4F004410F7 /* ASSecondController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSecondController.m; sourceTree = "<group>"; };
+		D556242A1AF26C3B004410F7 /* ASPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPlayer.h; sourceTree = "<group>"; };
+		D556242B1AF26C3B004410F7 /* ASPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +95,14 @@
 			children = (
 				D5166E9D1AC3C56E002A1D89 /* AppDelegate.h */,
 				D5166E9E1AC3C56E002A1D89 /* AppDelegate.m */,
+				D556242A1AF26C3B004410F7 /* ASPlayer.h */,
+				D556242B1AF26C3B004410F7 /* ASPlayer.m */,
 				D5166EA21AC3C56E002A1D89 /* ViewController.h */,
 				D5166EA31AC3C56E002A1D89 /* ViewController.m */,
+				D55624271AF24E4F004410F7 /* ASSecondController.h */,
+				D55624281AF24E4F004410F7 /* ASSecondController.m */,
+				D53A9A121AF600BE00889896 /* ASEndGameController.h */,
+				D53A9A131AF600BE00889896 /* ASEndGameController.m */,
 				D5166EA51AC3C56E002A1D89 /* Images.xcassets */,
 				D5166EA71AC3C56E002A1D89 /* Main.storyboard */,
 				D5166E9B1AC3C56E002A1D89 /* Supporting Files */,
@@ -106,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				D5166EB41AC3C56E002A1D89 /* Lab3Tests.m */,
+				D53A9A151AF6265F00889896 /* ASViewControllerTest.m */,
 				D5166EB21AC3C56E002A1D89 /* Supporting Files */,
 			);
 			path = Lab3Tests;
@@ -163,6 +181,7 @@
 		D5166E901AC3C56E002A1D89 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = AS;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Артем Соловьенко";
 				TargetAttributes = {
@@ -222,6 +241,9 @@
 				D5166EA41AC3C56E002A1D89 /* ViewController.m in Sources */,
 				D5166EA11AC3C56E002A1D89 /* main.m in Sources */,
 				D5166E9F1AC3C56E002A1D89 /* AppDelegate.m in Sources */,
+				D55624291AF24E4F004410F7 /* ASSecondController.m in Sources */,
+				D556242C1AF26C3B004410F7 /* ASPlayer.m in Sources */,
+				D53A9A141AF600BE00889896 /* ASEndGameController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D53A9A161AF6265F00889896 /* ASViewControllerTest.m in Sources */,
 				D5166EB51AC3C56E002A1D89 /* Lab3Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +431,7 @@
 				D5166EBA1AC3C56E002A1D89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D5166EBB1AC3C56E002A1D89 /* Build configuration list for PBXNativeTarget "Lab3Tests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +440,7 @@
 				D5166EBD1AC3C56E002A1D89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
