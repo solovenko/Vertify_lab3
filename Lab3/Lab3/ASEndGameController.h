@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "ASPlayer.h"
+#import "ViewController.h"
 
 @interface ASEndGameController : NSViewController
 

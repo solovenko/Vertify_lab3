@@ -54,8 +54,8 @@ typedef enum {
 #pragma mark - Methods
 - (void)startInitionalize;
 - (void)update;
-- (void)nextTurn; //Следующий ход
-- (BOOL)gameLogic;
+- (void)nextTurn: (ASTurnPlayer)turn; //Следующий ход
+- (BOOL)gameLogic:(NSString*) enteredCity : (BOOL) skipFlag ;
 - (void)addBonus;
 
 #pragma mark - Segues

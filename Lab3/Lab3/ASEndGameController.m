@@ -28,6 +28,14 @@
 }
 
 #pragma mark - Methods
+
+- (void)prepareForSegue:(NSStoryboardSegue *)segue
+                 sender:(id)sender {
+    
+    [[[[self view] window] windowController] close];
+}
+
+
 - (void)startInit {
     
     NSArray *players = [self representedObject];
@@ -51,11 +59,11 @@
     
 }
 
+#pragma mark - Actions
+
 - (IBAction)exitGame:(id)sender {
     
-    [[[[self view] window] windowController] dismissController:self];
-
+    [[NSApplication sharedApplication]terminate:self];
 }
-
 
 @end

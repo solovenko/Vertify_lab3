@@ -63,7 +63,9 @@
     //Загрузка городов
     
     NSString* fileName = [NSMutableString stringWithString:@"/tmp/db.txt"];
-    NSString *fileString = [NSString stringWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error: NULL];
+    NSString *fileString = [NSString stringWithContentsOfFile:fileName
+                                                     encoding:NSUTF8StringEncoding
+                                                        error: NULL];
     
     _listOfCitiesArray = [NSMutableArray arrayWithArray:[fileString componentsSeparatedByString:@"\n"]];
     
@@ -133,9 +135,9 @@
     
 }
 
-- (void)nextTurn {
+- (void)nextTurn: (ASTurnPlayer)turn {
     
-    switch (_currentTurn) {
+    switch (turn) {
         case ASTurnPlayer1:
             _currentTurn = ASTurnPlayer2;
             break;
@@ -145,11 +147,11 @@
     }
 }
 
-- (BOOL)gameLogic {
+- (BOOL)gameLogic: (NSString*)enteredCity : (BOOL) skipFlag {
     
     BOOL isSuccessful = NO;
     
-    NSString *enteredNameOfCity = [NSString stringWithFormat: _gameInputCityTextField.stringValue, nil];
+//    NSString *enteredNameOfCity = [NSString stringWithFormat: _gameInputCityTextField.stringValue, nil];
     
     BOOL isFinden = NO;
     
@@ -159,7 +161,7 @@
         
         NSUInteger length = [element length];
         
-        if ([element caseInsensitiveCompare:enteredNameOfCity] == NSOrderedSame &&
+        if ([element caseInsensitiveCompare:enteredCity] == NSOrderedSame &&
             length > 1){
             isFinden = YES;
             resultString = element;
@@ -176,7 +178,7 @@
         BOOL isUsed = NO;
         
         for (NSString *element in _usedCitiesArray) {
-            if ([element isEqualTo:enteredNameOfCity]){
+            if ([element isEqualTo:enteredCity]){
                 isUsed = YES;
             }
         }
@@ -260,8 +262,10 @@
 #pragma mark - Action Buttons
 - (IBAction)enterButton:(id)sender {
     
-    if ([self gameLogic]) {
-        [self nextTurn];
+    NSString *enteredNameOfCity = [NSString stringWithFormat: _gameInputCityTextField.stringValue, nil];
+    
+    if ([self gameLogic:enteredNameOfCity :_skipFlag]) {
+        [self nextTurn:_currentTurn];
         _skipFlag = NO;
         [self update];        
     }
@@ -281,7 +285,7 @@
             break;
     }
     
-    [self nextTurn];
+    [self nextTurn: _currentTurn];
     [self update];
 
 }

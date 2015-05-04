@@ -37,17 +37,19 @@
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
     
-    return [self isAllowToSegue];
+    NSString *name1 = _player1InputNameTextField.stringValue;
+    NSString *name2 = _player2InputNameTextField.stringValue;
+    return [self isAllowToSegue:name1 and:name2];
 }
 
 /* Правильно ли введены имена
  
  */
-- (BOOL)isAllowToSegue{
+- (BOOL)isAllowToSegue: (NSString*) firstname and: (NSString*) secondName{
     
     BOOL isAllowToSegue = YES;
     
-    NSString* inputNamePlayer1 = _player1InputNameTextField.stringValue;
+    NSString* inputNamePlayer1 = firstname;
     if ([inputNamePlayer1 isEqualToString:@""]) {
         _player1NameLabel.stringValue = [NSString stringWithFormat: @"Введите имя игрока 1!", nil];
         isAllowToSegue = NO;
@@ -62,7 +64,7 @@
     }
     
     
-    NSString* inputNamePlayer2 = _player2InputNameTextField.stringValue;
+    NSString* inputNamePlayer2 = secondName;
     if ([inputNamePlayer2 isEqualToString:@""]) {
         _player2NameLabel.stringValue = [NSString stringWithFormat: @"Введите имя игрока 2!", nil];
         isAllowToSegue = NO;

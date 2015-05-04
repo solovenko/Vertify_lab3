@@ -24,6 +24,7 @@
 #pragma mark - Methods
 - (void)prepareForSegue:(NSStoryboardSegue *)segue
                  sender:(id)sender;
+- (BOOL)isAllowToSegue:(NSString*) firstname and: (NSString*) secondName;
 
 #pragma mark - ActionsMark
 -(IBAction)submitButton:(id)sender;
