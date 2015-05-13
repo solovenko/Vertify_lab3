@@ -8,11 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
-#import "ViewController.h"
+#import "ASLoginController.h"
 
 @interface ASViewControllerTest : XCTestCase
 {
-    ViewController *vc;
+    ASLoginController *vc;
 }
 
 @end
@@ -21,7 +21,7 @@
 
 - (void)setUp {
     [super setUp];
-    vc = [ViewController new];
+    vc = [ASLoginController new];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
 }

@@ -7,10 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "ASSecondController.h"
+#import "ASGameplayController.h"
 #import "ASPlayer.h"
 
-@interface ViewController : NSViewController {
+@interface ASLoginController : NSViewController {
 
 }
 

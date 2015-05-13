@@ -8,11 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
-#import "ASSecondController.h"
+#import "ASGameplayController.h"
 
 @interface ASSecondControllerTest : XCTestCase
 {
-    ASSecondController *sc;
+    ASGameplayController *sc;
 }
 
 @end
@@ -21,7 +21,7 @@
 
 - (void)setUp {
     [super setUp];
-    sc = [ASSecondController new];
+    sc = [ASGameplayController new];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 

@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Артем Соловьенко. All rights reserved.
 //
 
-#import "ASSecondController.h"
+#import "ASGameplayController.h"
 
-@interface ASSecondController ()
+@interface ASGameplayController ()
 
 @end
 
-@implementation ASSecondController
+@implementation ASGameplayController
 
 @synthesize player1SkipCounter = _player1SkipCounter;
 @synthesize player2SkipCounter = _player2SkipCounter;
@@ -161,8 +161,7 @@
         
         NSUInteger length = [element length];
         
-        if ([element caseInsensitiveCompare:enteredCity] == NSOrderedSame &&
-            length > 1){
+        if ([element caseInsensitiveCompare:enteredCity] == NSOrderedSame && length > 1){
             isFinden = YES;
             resultString = element;
         }
@@ -178,7 +177,7 @@
         BOOL isUsed = NO;
         
         for (NSString *element in _usedCitiesArray) {
-            if ([element isEqualTo:enteredCity]){
+            if ([element caseInsensitiveCompare:enteredCity] == NSOrderedSame){
                 isUsed = YES;
             }
         }
@@ -251,6 +250,12 @@
     }
 }
 
+- (void)doSegue: (NSString*) identifier {
+    
+    [self performSegueWithIdentifier:identifier sender:self];
+    [[[[self view] window] windowController] close];
+}
+
 - (void)prepareForSegue:(NSStoryboardSegue *)segue
                  sender:(id)sender {
     
@@ -278,10 +283,16 @@
     switch (_currentTurn) {
         case ASTurnPlayer1:
             _player1.skips++;
+            if ([_player1 skips] > 2){
+                [self doSegue:@"toEndGameWindowSegue"];
+            }
             break;
             
         case ASTurnPlayer2:
             _player2.skips++;
+            if ([_player2 skips] > 2){
+                [self doSegue:@"toEndGameWindowSegue"];
+            }
             break;
     }
     
@@ -291,6 +302,26 @@
 }
 
 - (IBAction)endButton:(id)sender {
+    
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert addButtonWithTitle:@"Нет"];
+    [alert addButtonWithTitle:@"Да"];
+    [alert setMessageText:@"Вы действительно хотите закончить игру?"];
+    [alert setInformativeText:@"Подведение итогов игры произойдёт по текущим результатам!"];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    
+    //Переопределение нажатия клавиш на кнопки
+    //Для кнопки "Нет"
+    NSButton *button  = [[alert buttons]objectAtIndex:0];
+    [button setKeyEquivalent:@""];
+    //Для кнопки "Да"
+    button  = [[alert buttons]objectAtIndex:1];
+    [button setKeyEquivalent:@"\r"];
+    
+    if ([alert runModal] == NSAlertSecondButtonReturn) {
+        [self doSegue:@"toEndGameWindowSegue"];
+    }
 }
+    
 @end
 

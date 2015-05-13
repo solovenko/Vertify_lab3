@@ -15,7 +15,7 @@ typedef enum {
     ASTurnPlayer2
 }ASTurnPlayer;
 
-@interface ASSecondController : NSViewController
+@interface ASGameplayController : NSViewController
 
 @property (retain) ASPlayer *player1;
 @property (retain) ASPlayer *player2;
@@ -57,6 +57,7 @@ typedef enum {
 - (void)nextTurn: (ASTurnPlayer)turn; //Следующий ход
 - (BOOL)gameLogic:(NSString*) enteredCity : (BOOL) skipFlag ;
 - (void)addBonus;
+- (void)doSegue: (NSString*) identifier;
 
 #pragma mark - Segues
 

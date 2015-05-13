@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Артем Соловьенко. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ASLoginController.h"
 
-@implementation ViewController
+@implementation ASLoginController
 
 @synthesize player1NameLabel = _player1NameLabel;
 @synthesize player1InputNameTextField = _player1InputNameTextField;
@@ -30,7 +30,7 @@
 - (void)prepareForSegue:(NSStoryboardSegue *)segue
                  sender:(id)sender {
     
-    ASSecondController* second = segue.destinationController;
+    ASGameplayController* second = segue.destinationController;
     second.representedObject = self.players;
     [[[[self view] window] windowController] close];
 }

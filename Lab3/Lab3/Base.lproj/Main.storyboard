@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7531"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -667,7 +667,7 @@
         <!--Вход-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController title="Вход" id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Вход" id="XfG-lQ-9wD" customClass="ASLoginController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="598" height="246"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -729,12 +729,12 @@ DQ
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120" y="1122"/>
+            <point key="canvasLocation" x="119" y="1123"/>
         </scene>
         <!--Главное окно-->
         <scene sceneID="F8w-hk-vSZ">
             <objects>
-                <viewController title="Главное окно" id="fP8-rd-DZR" customClass="ASSecondController" sceneMemberID="viewController">
+                <viewController title="Главное окно" id="fP8-rd-DZR" customClass="ASGameplayController" sceneMemberID="viewController">
                     <view key="view" id="Kj0-F4-e9U">
                         <rect key="frame" x="0.0" y="0.0" width="928" height="570"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -862,7 +862,6 @@ DQ
                                 </buttonCell>
                                 <connections>
                                     <action selector="endButton:" target="fP8-rd-DZR" id="CTQ-N6-hXs"/>
-                                    <segue destination="ldI-XV-9XT" kind="show" identifier="toEndGameWindowSegue" id="Da5-rs-S0Y"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U18-Iu-MqJ">
@@ -895,6 +894,7 @@ DQ
                         <outlet property="player2NameLabel" destination="Id0-hV-NTQ" id="QBX-gN-Hc2"/>
                         <outlet property="player2ScoreLabel" destination="WHj-9L-OZt" id="IHt-ja-xQg"/>
                         <outlet property="player2SkipsLabel" destination="Y5W-Sj-aFC" id="k0i-Dv-Wtp"/>
+                        <segue destination="ldI-XV-9XT" kind="show" identifier="toEndGameWindowSegue" id="NGv-U4-bFJ"/>
                     </connections>
                 </viewController>
                 <customObject id="rxW-ux-AJO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
