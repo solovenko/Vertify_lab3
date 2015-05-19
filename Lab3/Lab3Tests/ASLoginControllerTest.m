@@ -10,18 +10,18 @@
 #import <XCTest/XCTest.h>
 #import "ASLoginController.h"
 
-@interface ASViewControllerTest : XCTestCase
+@interface ASLoginControllerTest : XCTestCase
 {
-    ASLoginController *vc;
+    ASLoginController *viewController;
 }
 
 @end
 
-@implementation ASViewControllerTest
+@implementation ASLoginControllerTest
 
 - (void)setUp {
     [super setUp];
-    vc = [ASLoginController new];
+    viewController = [ASLoginController new];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
 }
@@ -43,10 +43,9 @@
 
 - (void)testIsAllowToSegue1{
     
-//    ViewController *vc = [ViewController new];
     NSString *name1 = @" ";
     NSString *name2 = @"";
-    BOOL result = [vc isAllowToSegue:name1 and:name2];
+    BOOL result = [viewController isAllowToSegue:name1 and:name2];
     XCTAssertEqual(NO, result);
 }
 
@@ -54,7 +53,7 @@
     
     NSString *name1 = @"Артем";
     NSString *name2 = @"ы";
-    BOOL result = [vc isAllowToSegue:name1 and:name2];
+    BOOL result = [viewController isAllowToSegue:name1 and:name2];
     XCTAssertEqual(NO, result);
 }
 
@@ -62,7 +61,7 @@
     
     NSString *name1 = @"Артем";
     NSString *name2 = @"длорпавыолдпав";
-    BOOL result = [vc isAllowToSegue:name1 and:name2];
+    BOOL result = [viewController isAllowToSegue:name1 and:name2];
 
     XCTAssertEqual(YES, result);
 }
@@ -71,10 +70,10 @@
     
     NSString *name1 = @"Артем";
     NSString *name2 = @"длорпавыолдпав";
-    BOOL tempResult = [vc isAllowToSegue:name1 and:name2];
+    BOOL tempResult = [viewController isAllowToSegue:name1 and:name2];
     BOOL result;
     if (tempResult) {
-        result = ([vc players] != nil);
+        result = ([viewController players] != nil);
     }
     XCTAssertEqual(YES, result);
 }
@@ -83,10 +82,10 @@
     
     NSString *name1 = @"";
     NSString *name2 = @"длорпавыолдпав";
-    BOOL tempResult = [vc isAllowToSegue:name1 and:name2];
+    BOOL tempResult = [viewController isAllowToSegue:name1 and:name2];
     BOOL result;
     if (tempResult) {
-        result = ([vc players] != nil);
+        result = ([viewController players] != nil);
     }
     XCTAssertEqual(NO, result);
 }

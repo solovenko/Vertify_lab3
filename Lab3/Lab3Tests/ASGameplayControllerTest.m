@@ -10,14 +10,14 @@
 #import <XCTest/XCTest.h>
 #import "ASGameplayController.h"
 
-@interface ASSecondControllerTest : XCTestCase
+@interface ASGameplayControllerTest : XCTestCase
 {
     ASGameplayController *sc;
 }
 
 @end
 
-@implementation ASSecondControllerTest
+@implementation ASGameplayControllerTest
 
 - (void)setUp {
     [super setUp];

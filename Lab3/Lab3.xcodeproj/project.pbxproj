@@ -13,10 +13,10 @@
 		D5166EA61AC3C56E002A1D89 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5166EA51AC3C56E002A1D89 /* Images.xcassets */; };
 		D5166EA91AC3C56E002A1D89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5166EA71AC3C56E002A1D89 /* Main.storyboard */; };
 		D5166EB51AC3C56E002A1D89 /* Lab3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5166EB41AC3C56E002A1D89 /* Lab3Tests.m */; };
-		D524AFC41AF774740019BBA1 /* ASSecondControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D524AFC31AF774740019BBA1 /* ASSecondControllerTest.m */; };
+		D524AFC41AF774740019BBA1 /* ASGameplayControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D524AFC31AF774740019BBA1 /* ASGameplayControllerTest.m */; };
 		D52623881B0B5DE7004477E3 /* db.txt in Resources */ = {isa = PBXBuildFile; fileRef = D52623871B0B5DE7004477E3 /* db.txt */; };
 		D53A9A141AF600BE00889896 /* ASEndGameController.m in Sources */ = {isa = PBXBuildFile; fileRef = D53A9A131AF600BE00889896 /* ASEndGameController.m */; };
-		D53A9A161AF6265F00889896 /* ASViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D53A9A151AF6265F00889896 /* ASViewControllerTest.m */; };
+		D53A9A161AF6265F00889896 /* ASLoginControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D53A9A151AF6265F00889896 /* ASLoginControllerTest.m */; };
 		D55624291AF24E4F004410F7 /* ASGameplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55624281AF24E4F004410F7 /* ASGameplayController.m */; };
 		D556242C1AF26C3B004410F7 /* ASPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D556242B1AF26C3B004410F7 /* ASPlayer.m */; };
 /* End PBXBuildFile section */
@@ -44,11 +44,11 @@
 		D5166EAE1AC3C56E002A1D89 /* Lab3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lab3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5166EB31AC3C56E002A1D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5166EB41AC3C56E002A1D89 /* Lab3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lab3Tests.m; sourceTree = "<group>"; };
-		D524AFC31AF774740019BBA1 /* ASSecondControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSecondControllerTest.m; sourceTree = "<group>"; };
+		D524AFC31AF774740019BBA1 /* ASGameplayControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASGameplayControllerTest.m; sourceTree = "<group>"; };
 		D52623871B0B5DE7004477E3 /* db.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = db.txt; sourceTree = "<group>"; };
 		D53A9A121AF600BE00889896 /* ASEndGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASEndGameController.h; sourceTree = "<group>"; };
 		D53A9A131AF600BE00889896 /* ASEndGameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASEndGameController.m; sourceTree = "<group>"; };
-		D53A9A151AF6265F00889896 /* ASViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASViewControllerTest.m; sourceTree = "<group>"; };
+		D53A9A151AF6265F00889896 /* ASLoginControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLoginControllerTest.m; sourceTree = "<group>"; };
 		D55624271AF24E4F004410F7 /* ASGameplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASGameplayController.h; sourceTree = "<group>"; };
 		D55624281AF24E4F004410F7 /* ASGameplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASGameplayController.m; sourceTree = "<group>"; };
 		D556242A1AF26C3B004410F7 /* ASPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPlayer.h; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				D5166EB41AC3C56E002A1D89 /* Lab3Tests.m */,
-				D53A9A151AF6265F00889896 /* ASViewControllerTest.m */,
-				D524AFC31AF774740019BBA1 /* ASSecondControllerTest.m */,
+				D53A9A151AF6265F00889896 /* ASLoginControllerTest.m */,
+				D524AFC31AF774740019BBA1 /* ASGameplayControllerTest.m */,
 				D5166EB21AC3C56E002A1D89 /* Supporting Files */,
 			);
 			path = Lab3Tests;
@@ -254,8 +254,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D524AFC41AF774740019BBA1 /* ASSecondControllerTest.m in Sources */,
-				D53A9A161AF6265F00889896 /* ASViewControllerTest.m in Sources */,
+				D524AFC41AF774740019BBA1 /* ASGameplayControllerTest.m in Sources */,
+				D53A9A161AF6265F00889896 /* ASLoginControllerTest.m in Sources */,
 				D5166EB51AC3C56E002A1D89 /* Lab3Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
