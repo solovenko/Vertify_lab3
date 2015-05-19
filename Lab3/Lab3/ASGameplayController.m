@@ -62,12 +62,13 @@
     
     //Загрузка городов
     
-    NSString* fileName = [NSMutableString stringWithString:@"/tmp/db.txt"];
-    NSString *fileString = [NSString stringWithContentsOfFile:fileName
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"db" ofType:@"txt"];
+
+    NSString *content = [NSString stringWithContentsOfFile:filePath
                                                      encoding:NSUTF8StringEncoding
                                                         error: NULL];
     
-    _listOfCitiesArray = [NSMutableArray arrayWithArray:[fileString componentsSeparatedByString:@"\n"]];
+    _listOfCitiesArray = [NSMutableArray arrayWithArray:[content componentsSeparatedByString:@"\n"]];
     
 }
 
