@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ASPlayer : NSObject
-
+ForceTouch
 @property (strong, nonatomic) NSString* name;
 @property (assign, nonatomic) NSInteger score;
 @property (assign, nonatomic) NSInteger skips;
